@@ -1,0 +1,44 @@
+<h1 class="text-center">Top contributors</h1>
+<form>
+	<div class="form-group">
+		<div class="input-group">
+			<div class="input-group-addon"><i class="icon-search"></i></div>
+			<input type="text" class="form-control" placeholder="I'm looking for..." ng-model="searchWord">
+		</div>      
+	</div>
+</form>  
+<div class="table-responsive">
+	<table class="table table-hover">
+		<tr>
+			<th>
+				<a href="#/contrib" ng-click="sortType = 'nickname'; sortReverse = !sortReverse">
+					Contributor
+					<span ng-show="sortType == 'nickname' && !sortReverse" class="icon-arrow-down2"></span>
+					<span ng-show="sortType == 'nickname' && sortReverse" class="icon-arrow-up2"></span>
+				</a>
+			</th>
+			<th class="text-center">
+				<a href="#/contrib" ng-click="sortType = 'team'; sortReverse = !sortReverse">
+					Team
+					<span ng-show="sortType == 'team' && !sortReverse" class="icon-arrow-down2"></span>
+					<span ng-show="sortType == 'team' && sortReverse" class="icon-arrow-up2"></span>
+				</a>
+			</th>
+			<th class="text-center">
+				<a href="#/contrib" ng-click="sortType = 'contributions'; sortReverse = !sortReverse">
+					Number of contributions
+					<span ng-show="sortType == 'contributions' && !sortReverse" class="icon-arrow-down2"></span>
+					<span ng-show="sortType == 'contributions' && sortReverse" class="icon-arrow-up2"></span>
+				</a>
+			</th>
+		</tr>
+		<tr ng-repeat="item in items | orderBy:sortType:sortReverse | filter:searchWord">
+			<span ng-hide="items">Loading...</span>
+			<td>
+				{{item.nickname}}
+			</td>
+			<td class="text-center">{{item.team}}</td>
+			<td class="text-center">{{item.contributions}}</td>
+		</tr>
+	</table>
+</div> <!-- /.table-responsive --> 

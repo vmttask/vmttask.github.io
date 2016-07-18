@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <title>Test Task by Vira Melnyk</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="header" class="text-center">
+        <nav class="navbar navbar-static-top">
+            <div class="container">
+                <h1>X-Formation</h1>
+                <ul class="line-list">
+                    <li><a href="#/">To GitHub info</a></li>
+                    <li><a href="#/contrib">Top contributors</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div  class="container">
+        <div class="row">  
+            <div ng-view>
+            </div>
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+    <script src="js/libs/angular.min.js"></script>
+    <script src="js/libs/angular-route.min.js"></script> 
+    <script src="js/app.js"></script>
+    <script src="js/controllers/mainController.js"></script>
+    <script src="js/controllers/contribController.js"></script>
+</body>
+</html>
